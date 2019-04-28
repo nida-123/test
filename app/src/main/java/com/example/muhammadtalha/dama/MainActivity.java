@@ -25,8 +25,10 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     private SliderLayout mDemoSlider;
     private ImageView mShare;
 
-    HashMap<String, Integer> file_maps;
+//    HashMap<String, Integer> file_maps;
     private int currentPage;
+
+    HashMap<String, String> url_maps;
 
 
     @Override
@@ -45,25 +47,24 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
         mDemoSlider = (SliderLayout) findViewById(R.id.slider);
 
-
-        HashMap<String, String> url_maps = new HashMap<String, String>();
+        url_maps= new HashMap<String, String>();
         url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
         url_maps.put("Big Bang Theory", "http://tvfiles.alphacoders.com/100/hdclearart-10.png");
         url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
         url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
 
 
-        file_maps = new HashMap<String, Integer>();
-        file_maps.put("Hannibal", R.drawable.hannibal);
-        file_maps.put("Big Bang Theory", R.drawable.bigbang);
-        file_maps.put("House of Cards", R.drawable.house);
-        file_maps.put("Game of Thrones", R.drawable.game_of_thrones);
+//        file_maps = new HashMap<String, Integer>();
+//        file_maps.put("Hannibal", R.drawable.hannibal);
+//        file_maps.put("Big Bang Theory", R.drawable.bigbang);
+//        file_maps.put("House of Cards", R.drawable.house);
+//        file_maps.put("Game of Thrones", R.drawable.game_of_thrones);
 
-        for (String name : file_maps.keySet()) {
+        for (String name : url_maps.keySet()) {
             TextSliderView textSliderView = new TextSliderView(this);
             textSliderView
                     .description(name)
-                    .image(file_maps.get(name))
+                    .image(url_maps.get(name))
                     .setOnSliderClickListener(this);
             textSliderView.bundle(new Bundle());
             textSliderView.getBundle()
@@ -104,11 +105,11 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 //        Toast.makeText(this,slider.getBundle().get("extra") + "", Toast.LENGTH_SHORT).show();
 //        Log.d("POOOOOO", String.valueOf(currentPage));
 
-        List<Integer> list = new ArrayList<Integer>(file_maps.values());
+        List<String> list = new ArrayList<String>(url_maps.values());
         Log.d("Hello", list.toString());
 
         new ImageViewer.Builder(MainActivity.this, list)
-                .setStartPosition(0)
+                .setStartPosition(currentPage)
                 .show();
 
 
