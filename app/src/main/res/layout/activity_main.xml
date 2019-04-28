@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:layout_scrollFlags="scroll|exitUntilCollapsed"
+            custom:contentScrim="?attr/colorPrimary"
+            custom:expandedTitleTextAppearance="@android:color/transparent"
+            android:fitsSystemWindows="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <com.daimajia.slider.library.SliderLayout
+                    android:id="@+id/slider"
+                    android:layout_width="match_parent"
+                    custom:pager_animation="Accordion"
+                    custom:auto_cycle="true"
+                    custom:layout_collapseMode="parallax"
+                    custom:indicator_visibility="visible"
+                    custom:pager_animation_span="1100"
+                    android:layout_height="@dimen/_200sdp">
+
+                    <com.daimajia.slider.library.Indicators.PagerIndicator
+                        android:id="@+id/custom_indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        custom:selected_color="#0095BF"
+                        custom:unselected_color="#55333333"
+                        custom:shape="oval"
+                        custom:selected_padding_left="5dp"
+                        custom:selected_padding_right="5dp"
+                        custom:unselected_padding_left="5dp"
+                        custom:unselected_padding_right="5dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        custom:selected_width="6dp"
+                        custom:selected_height="6dp"
+                        custom:unselected_width="6dp"
+                        custom:unselected_height="6dp"
+                        android:layout_marginBottom="20dp"
+                        />
+                    <com.daimajia.slider.library.Indicators.PagerIndicator
+                        android:id="@+id/custom_indicator2"
+                        style="@style/AndroidImageSlider_Corner_Oval_Orange"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="20dp"
+                        />
+                </com.daimajia.slider.library.SliderLayout>
+
+            </LinearLayout>
+
+
+
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                custom:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                custom:layout_collapseMode="pin"
+                >
+
+            </android.support.v7.widget.Toolbar>
+
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:src="@drawable/fav_icon"
+        android:tint="@color/red"
+        custom:layout_anchor="@id/appBarLayout"
+        custom:layout_anchorGravity="bottom|right|end"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:layout_marginRight="@dimen/_14sdp" />
+
+    <ImageView
+        android:id="@+id/share_img"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:src="@drawable/share_icon"
+        android:tint="@color/dark_grey"
+        android:padding="@dimen/_4sdp"
+        custom:layout_anchor="@id/appBarLayout"
+        custom:layout_anchorGravity="top|right|end"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:layout_marginRight="@dimen/_14sdp" />
+
+
+
+
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custom:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <!--crdview1-->
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardView"
+                app:cardUseCompatPadding="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_16sdp"
+                >
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="24dp">
+
+                        <TextView
+
+                            style="@style/TextAppearance.AppCompat.Title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="KHYBER SWIFT 91 JAPAN ASSEMBLED"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/roboto_bold"
+                            android:padding="@dimen/_4sdp"
+                            android:textColor="@color/black"
+                            />
+
+                        <TextView
+
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$132.00"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/dark_grey"
+                            android:padding="@dimen/_4sdp"
+                            android:textSize="@dimen/_16ssp"
+                            />
+
+
+
+                        <TextView
+
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_4sdp"
+                            android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                            android:text="YASEENABAD, KARACHI"
+                            android:drawableTint="@color/dark_grey"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/dark_grey"
+                            android:gravity="center"
+                            />
+
+                        <Button
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Add to Cart"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/dark_grey"
+                            android:background="@drawable/btn_back"
+                            android:padding="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            />
+                    </LinearLayout>
+
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Details"
+                        android:gravity="center"
+                        android:background="@drawable/btn_back"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:padding="@dimen/_8sdp"
+                        android:textColor="@color/black"
+
+                        />
+                    <!--linearlayout1-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+
+                       >
+                      <ImageView
+
+                          android:layout_width="@dimen/_17sdp"
+                          android:layout_height="@dimen/_17sdp"
+                          android:src="@drawable/dot_icon"
+                          android:tint="@color/dark_grey"
+                          android:padding="@dimen/_4sdp"
+                          android:layout_gravity="center_vertical"
+
+                          />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Make "
+                            android:layout_gravity="center_vertical"
+                            android:textSize="@dimen/_12ssp"
+                            android:padding="@dimen/_4sdp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/dark_grey"
+
+                            />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Suzuki"
+                            android:padding="@dimen/_4sdp"
+                            android:textSize="@dimen/_12ssp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/black"
+                            />
+
+                    </LinearLayout>
+
+                    <!--linearlayout2-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+
+                        >
+                        <ImageView
+
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:src="@drawable/dot_icon"
+                            android:tint="@color/dark_grey"
+                            android:layout_gravity="center_vertical"
+                            android:padding="@dimen/_4sdp"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Model"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="@dimen/_12ssp"
+                            android:padding="@dimen/_4sdp"
+                            android:fontFamily="@font/roboto_regular"
+
+                            />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Khyber"
+                            android:padding="@dimen/_4sdp"
+                            android:textSize="@dimen/_12ssp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/black"
+                            />
+
+                    </LinearLayout>
+
+                    <!--linearlayout3-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+
+                        >
+                        <ImageView
+
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:src="@drawable/dot_icon"
+                            android:tint="@color/dark_grey"
+                            android:layout_gravity="center_vertical"
+                            android:padding="@dimen/_4sdp"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Year"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="@dimen/_12ssp"
+                            android:padding="@dimen/_4sdp"
+                            android:fontFamily="@font/roboto_regular"
+
+
+                            />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1991"
+                            android:padding="@dimen/_4sdp"
+                            android:textSize="@dimen/_12ssp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/black"
+                            />
+
+                    </LinearLayout>
+
+                    <!--linearlayout4-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+
+                        >
+                        <ImageView
+
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:src="@drawable/dot_icon"
+                            android:tint="@color/dark_grey"
+                            android:layout_gravity="center_vertical"
+                            android:padding="@dimen/_4sdp"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kms Driven"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="@dimen/_12ssp"
+                            android:padding="@dimen/_4sdp"
+                            android:fontFamily="@font/roboto_regular"
+
+                            />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="80.800km"
+                            android:padding="@dimen/_4sdp"
+                            android:textSize="@dimen/_12ssp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/black"
+                            />
+
+                    </LinearLayout>
+
+                    <!--linearlayout5-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+
+                        >
+                        <ImageView
+
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:src="@drawable/dot_icon"
+                            android:tint="@color/dark_grey"
+                            android:layout_gravity="center_vertical"
+                            android:padding="@dimen/_4sdp"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fuel"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="@dimen/_12ssp"
+                            android:padding="@dimen/_4sdp"
+                            android:fontFamily="@font/roboto_regular"
+
+                            />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CNG"
+                            android:padding="@dimen/_4sdp"
+                            android:textSize="@dimen/_12ssp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/black"
+                            />
+
+                    </LinearLayout>
+
+                    <!--linearlayout6-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+
+                        >
+                        <ImageView
+
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:src="@drawable/dot_icon"
+                            android:tint="@color/dark_grey"
+                            android:layout_gravity="center_vertical"
+                            android:padding="@dimen/_4sdp"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Condition"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="@dimen/_12ssp"
+                            android:padding="@dimen/_4sdp"
+                            android:fontFamily="@font/roboto_regular"
+
+                            />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Used"
+                            android:padding="@dimen/_4sdp"
+                            android:textSize="@dimen/_12ssp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/black"
+                            />
+
+                    </LinearLayout>
+
+                    <!--linearlayout7-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+
+                        >
+                        <ImageView
+
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:src="@drawable/dot_icon"
+                            android:tint="@color/dark_grey"
+                            android:layout_gravity="center_vertical"
+                            android:padding="@dimen/_4sdp"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Transaction type"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="@dimen/_12ssp"
+                            android:padding="@dimen/_4sdp"
+                            android:fontFamily="@font/roboto_regular"
+
+                            />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cash"
+                            android:padding="@dimen/_4sdp"
+                            android:textSize="@dimen/_12ssp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/black"
+                            />
+
+                    </LinearLayout>
+
+                    <!--linearlayout3-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+
+                        >
+                        <ImageView
+
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:src="@drawable/dot_icon"
+                            android:tint="@color/dark_grey"
+                            android:layout_gravity="center_vertical"
+                            android:padding="@dimen/_4sdp"
+
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Registered In"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="@dimen/_12ssp"
+                            android:padding="@dimen/_4sdp"
+                            android:fontFamily="@font/roboto_regular"
+
+                            />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Karachi"
+                            android:padding="@dimen/_4sdp"
+                            android:textSize="@dimen/_12ssp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/black"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+   >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:gravity="center"
+                        android:background="@drawable/btn_back"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:padding="@dimen/_8sdp"
+                        android:textColor="@color/black"
+
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="A car (or automobile) is a wheeled motor vehicle used for transportation. Most definitions of car say they run primarily on roads, seat one to eight people, have four tires, and mainly transport people rather than goods. Cars came into global use during the 20th century, and developed economies depend on them. The year 1886 is regarded as the birth year of the modern car when German inventor Karl Benz patented his Benz Patent-Motorwagen.Cars became widely available in the early 20th century."
+                        android:textSize="@dimen/_12ssp"
+                        android:padding="@dimen/_4sdp"
+                        android:gravity="center"
+                        android:textAlignment="textStart"
+                        android:layout_margin="@dimen/_4sdp"
+                        android:fontFamily="@font/roboto_regular"
+
+
+                        />
+
+
+
+                </LinearLayout>
+
+
+
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+</LinearLayout>
